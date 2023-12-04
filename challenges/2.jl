@@ -1,7 +1,4 @@
 function main()
-    # Read data from input file
-    fin = open("inputs/2.txt", "r")
-
     # Scenario variables
     maxes = Dict(
         "red" => 12,
@@ -10,7 +7,7 @@ function main()
     )
 
     # Iterate over the games and track the sum of game ids
-    gameset = readlines(fin)
+    gameset = readlines("inputs/2.txt")
     sum_valid = 0
     sum_power = 0
     for game in gameset
@@ -20,9 +17,6 @@ function main()
     end
 
     @show sum_valid, sum_power
-
-    # Close the file stream
-    close(fin)
 end
 
 function gameIsValid(game::String, maxes::Dict)
